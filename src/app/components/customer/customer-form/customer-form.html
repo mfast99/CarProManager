@@ -1,12 +1,8 @@
-<!-- customer-form.html -->
 <div class="form-container">
     <h2>Kunde hinzufügen / bearbeiten</h2>
     <br/>
     <form [formGroup]="form" (ngSubmit)="submit()">
-  
-      <!-- customerId wird versteckt, bleibt internal -->
       <input formControlName="customerId" type="hidden" />
-  
       <div class="form-row">
         <label for="firstName">Vorname *</label>
         <input id="firstName" formControlName="firstName" type="text" />

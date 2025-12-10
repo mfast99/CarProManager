@@ -83,8 +83,9 @@ export class VehicleList implements OnInit {
     this.editVehicle.emit(id);
   }
 
-  changeStatus(vehicleId: number, newStatus: 'Verfügbar' | 'Reserviert' | 'Verkauft'): void {
-    this.vehicleService.updateVehicleStatus(vehicleId, newStatus).subscribe({
+  changeStatus(vehicle: Vehicle, newStatus: 'Verfügbar' | 'Reserviert' | 'Verkauft'): void {
+    vehicle.status = newStatus;
+    this.vehicleService.updateVehicle(vehicle).subscribe({
       next: () => {
         console.log('Status geändert');
         this.loadVehicles();

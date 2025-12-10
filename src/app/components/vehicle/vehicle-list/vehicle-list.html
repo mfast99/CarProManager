@@ -46,7 +46,7 @@
           <td>
             <select class="status-select" 
                     [value]="vehicle.status" 
-                    (change)="changeStatus(vehicle.id, $any($event.target).value)">
+                    (change)="changeStatus(vehicle, $any($event.target).value)">
               <option value="Verfügbar">Verfügbar</option>
               <option value="Reserviert">Reserviert</option>
               <option value="Verkauft">Verkauft</option>

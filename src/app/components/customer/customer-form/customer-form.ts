@@ -25,7 +25,7 @@ export class CustomerForm implements OnInit, OnChanges {
       email: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.required],
       street: ['', Validators.required],
-      zipCode: [null, Validators.required],
+      zipCode: [Validators.required],
       city: ['', Validators.required],
       newsletter: [false]
     });
@@ -62,7 +62,6 @@ export class CustomerForm implements OnInit, OnChanges {
     const newCustomer = customerData as Omit<Customer, 'customerId'>;
   
     if (customerId === 0) {
-      // CREATE
       this.cs.addCustomer(newCustomer).subscribe({
         next: (created) => {
           console.log('Kunde erstellt:', created);
